@@ -23,8 +23,8 @@
         font-size: 0.3rem;
         position: absolute;
         bottom: 0;
-        left: 50%;
-        transform: translate(-50%);
+        left: 30%;
+        transform: translate(-20%);
       }
 
       .title-bototm {
@@ -89,19 +89,22 @@
     .body-box {
       margin-top: 0.2rem;
       display: flex;
-      flex-direction: column;
-
+      flex-direction: row;
       //下方区域的布局
-      .content-box {
-        display: grid;
-        grid-template-columns: 2fr 3fr 5fr 3fr 2fr;
+      .left-box {
+        //display: grid;
+        grid-template-rows:2fr 4fr;
       }
 
       // 底部数据
-      .bototm-box {
+      .right-box {
+        //margin-top: 0.125rem;
+        //display: grid;
+        grid-template-rows:2fr 4fr;
+      }
+      .center-box {
         margin-top: 0.125rem;
         display: grid;
-        grid-template-columns: repeat(2, 50%);
       }
     }
   }

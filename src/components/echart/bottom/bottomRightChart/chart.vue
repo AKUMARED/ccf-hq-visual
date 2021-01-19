@@ -3,7 +3,7 @@
     <Echart
       :options="options"
       id="centreLeft1Chart"
-      height="6rem"
+      height="5rem"
       width="100%"
     ></Echart>
   </div>
@@ -108,7 +108,6 @@ export default {
               fontSize: 24,
               fontWeight: "normal"
             },
-            subtext: newData.year + "/" + newData.weekCategory[6],
             subtextStyle: {
               color: "#fff",
               fontSize: 16
@@ -164,19 +163,19 @@ export default {
             indicator: [
               {
                 name: "服务态度",
-                max: newData.maxData
+                max: 100
               },
               {
-                name: "产品质量",
-                max: 10
+                name: "响应效率",
+                max: 100
               },
               {
-                name: "任务效率",
-                max: 12
+                name: "处理效率",
+                max: 100
               },
               {
-                name: "售后保障",
-                max: 3.5
+                name: "处理效果",
+                max: 100
               }
             ]
           },
@@ -232,7 +231,7 @@ export default {
               symbolSize: 0,
               data: [
                 {
-                  value: newData.radarDataAvg[6],
+                  value: newData.radarDataAvg[0],
                   name: "平均指标",
                   itemStyle: {
                     normal: {
@@ -256,7 +255,7 @@ export default {
                   }
                 },
                 {
-                  value: newData.radarData[6],
+                  value: newData.radarData[0],
                   name: "我的指标",
                   itemStyle: {
                     normal: {
@@ -305,29 +304,29 @@ export default {
               },
               data: newData.weekLineData,
               lineSmooth: true,
-              markLine: {
-                silent: true,
-                data: [
-                  {
-                    type: "average",
-                    name: "平均值"
-                  }
-                ],
-                precision: 0,
-                label: {
-                  normal: {
-                    formatter: "平均值: \n {c}"
-                  }
-                },
-                lineStyle: {
-                  normal: {
-                    color: "rgba(248,211,81,.7)"
-                  }
-                }
-              },
+              // markLine: {
+              //   silent: true,
+              //   data: [
+              //     {
+              //       type: "average",
+              //       name: "平均值"
+              //     }
+              //   ],
+              //   precision: 0,
+              //   label: {
+              //     normal: {
+              //       formatter: "平均值: \n {c}"
+              //     }
+              //   },
+              //   lineStyle: {
+              //     normal: {
+              //       color: "rgba(248,211,81,.7)"
+              //     }
+              //   }
+              // },
               tooltip: {
                 position: "top",
-                formatter: "{c} m",
+                formatter: "{c}",
                 backgroundColor: "rgba(28,152,232,.2)",
                 padding: 6
               }

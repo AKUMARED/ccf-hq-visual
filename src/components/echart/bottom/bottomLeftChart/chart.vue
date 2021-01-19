@@ -4,7 +4,7 @@
     <Echart
       :options="options"
       id="bottomLeftChart"
-      height="6.25rem"
+      height="5.25rem"
       width="100%"
     ></Echart>
   </div>
@@ -46,7 +46,7 @@ export default {
             }
           },
           legend: {
-            data: ["已贯通", "计划贯通", "贯通率"],
+            data: [],
             textStyle: {
               color: "#B4B4B4"
             },

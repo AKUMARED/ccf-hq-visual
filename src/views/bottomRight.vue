@@ -6,10 +6,10 @@
           <icon name="chart-area"></icon>
         </span>
         <div class="d-flex">
-          <span class="fs-xl text mx-2">工单修复以及满意度统计图</span>
-          <div class="decoration2">
-            <dv-decoration-2 :reverse="true" style="width:5px;height:6rem;" />
-          </div>
+          <span class="fs-xl text mx-2">95598工单情况</span>
+<!--          <div class="decoration2">-->
+<!--            <dv-decoration-2 :reverse="true" style="width:5px;height:6rem;" />-->
+<!--          </div>-->
         </div>
       </div>
       <div>
@@ -35,12 +35,13 @@ export default {
 
 <style lang="scss">
 #bottomRight {
+  margin-top: 1rem;
   padding: 0.2rem 0.2rem 0;
-  height: 6.5rem;
+  height: 5.5rem;
   min-width: 3.75rem;
   border-radius: 0.0625rem;
   .bg-color-black {
-    height: 6.1875rem;
+    height: 5.1875rem;
     border-radius: 0.125rem;
   }
   .text {

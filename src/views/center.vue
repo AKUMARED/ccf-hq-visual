@@ -13,16 +13,16 @@
         <span style="color:#5cd9e8">
           <icon name="align-left"></icon>
         </span>
-        <span class="fs-xl text mx-2 mb-1">年度负责人组件达标榜</span>
+        <span class="fs-xl text mx-2 mb-1">配变状态</span>
         <dv-scroll-ranking-board :config="ranking" style="height:2.75rem" />
       </div>
       <div class="percent">
         <div class="item bg-color-black">
-          <span>今日任务通过率</span>
+          <span></span>
           <CenterChart :id="rate[0].id" :tips="rate[0].tips" :colorObj="rate[0].colorData" />
         </div>
         <div class="item bg-color-black">
-          <span>今日任务达标率</span>
+          <span></span>
           <CenterChart :id="rate[1].id" :tips="rate[1].tips" :colorObj="rate[1].colorData" />
         </div>
         <div class="water">
@@ -41,7 +41,7 @@ export default {
     return {
       titleItem: [
         {
-          title: "今年累计任务建次数",
+          title: "停运台次数量",
           number: {
             number: [120],
             toFixed: 1,
@@ -49,7 +49,7 @@ export default {
           }
         },
         {
-          title: "本月累计任务次数",
+          title: "低电压台次数量",
           number: {
             number: [18],
             toFixed: 1,
@@ -57,7 +57,7 @@ export default {
           }
         },
         {
-          title: "今日累计任务次数",
+          title: "轻载台次数量",
           number: {
             number: [2],
             toFixed: 1,
@@ -65,7 +65,7 @@ export default {
           }
         },
         {
-          title: "今年失败任务次数",
+          title: "重过载电压台次数量",
           number: {
             number: [14],
             toFixed: 1,
@@ -73,67 +73,40 @@ export default {
           }
         },
         {
-          title: "今年成功任务次数",
+          title: "三相不平衡台次数量",
           number: {
             number: [106],
             toFixed: 1,
             content: "{nt}"
           }
         },
-        {
-          title: "今年达标任务个数",
-          number: {
-            number: [100],
-            toFixed: 1,
-            content: "{nt}"
-          }
-        }
+
       ],
       ranking: {
         data: [
           {
-            name: "周口",
-            value: 55
-          },
-          {
-            name: "南阳",
+            name: "停运台次数量",
             value: 120
           },
           {
-            name: "西峡",
-            value: 78
+            name: "轻载台次数量",
+            value: 2
           },
           {
-            name: "驻马店",
-            value: 66
+            name: "重过载电压台次数量",
+            value: 14
           },
           {
-            name: "新乡",
-            value: 80
+            name: "低电压台次数量",
+            value: 18
           },
           {
-            name: "新乡2",
-            value: 80
-          },
-          {
-            name: "新乡3",
-            value: 80
-          },
-          {
-            name: "新乡4",
-            value: 80
-          },
-          {
-            name: "新乡5",
-            value: 80
-          },
-          {
-            name: "新乡6",
-            value: 80
+            name: "三相不平衡台次数量",
+            value: 106
           },
         ],
         carousel: "single",
-        unit: "人"
+        unit: "台次"
       },
       water: {
         data: [24, 45],
@@ -195,7 +168,7 @@ export default {
       border-radius: 0.0625rem;
       padding-top: 0.2rem;
       margin-top: 0.1rem;
-      width: 32%;
+      width: 28%;
       height: 0.875rem;
     }
   }

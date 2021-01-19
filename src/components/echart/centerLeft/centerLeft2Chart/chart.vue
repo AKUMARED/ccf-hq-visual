@@ -4,8 +4,8 @@
       id="centreLeft2Chart"
       ref="centreLeft2ChartRef"
       :options="options"
-      height="4.5rem"
-      width="4.125rem"
+      height="24.5rem"
+      width="8.125rem"
     ></Echart>
   </div>
 </template>
@@ -32,43 +32,41 @@ export default {
       handler(newData) {
         // 设置点的位置(经纬度)
         const geoCoordMap = {
-          厦门市: [118.11022, 24.490474, 20],
-          福州市: [119.206239, 26.275302, 20],
-          泉州市: [118.589421, 24.908853, 20],
-          漳州市: [117.561801, 24.510897, 20],
-          龙岩市: [116.82978, 25.391603, 20],
-          莆田市: [119.007558, 25.591011, 20],
-          三明市: [117.435001, 26.465444, 20],
-          南平市: [118.178459, 27.535627, 20],
-          宁德市: [119.527082, 27.15924, 20],
+
         };
         let seriesData = [
           {
-            name: '厦门市',
+            name: '杭州市',
           },
           {
-            name: '福州市',
+            name: '湖州市',
           },
           {
-            name: '泉州市',
+            name: '嘉兴市',
           },
           {
-            name: '漳州市',
+            name: '宁波市',
           },
           {
-            name: '龙岩市',
+            name: '绍兴市',
           },
           {
-            name: '莆田市',
+            name: '台州市',
           },
           {
-            name: '三明市',
+            name: '金华市',
           },
           {
-            name: '南平市',
+            name: '温州市',
           },
           {
-            name: '宁德市',
+            name: '丽水市',
+          },
+          {
+            name: '衢州市',
+          },
+          {
+            name: '舟山市',
           },
         ];
         let convertData = function (data) {
@@ -120,7 +118,7 @@ export default {
             zoom: 1.2,
             top: '10%',
             left: '16%',
-            map: '福建',
+            map: '浙江',
             roam: false,
             itemStyle: {
               normal: {
@@ -140,7 +138,7 @@ export default {
               type: 'map',
               aspectScale: 0.85, //长宽比
               zoom: 1.2,
-              mapType: '福建', // 自定义扩展图表类型
+              mapType: '浙江', // 自定义扩展图表类型
               top: '10%',
               left: '16%',
               itemStyle: {
