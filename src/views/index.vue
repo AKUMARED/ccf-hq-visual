@@ -8,7 +8,7 @@
           <div class="d-flex jc-center">
             <dv-decoration-8 :color="['#568aea', '#000000']" style="width:2.5rem;height:.625rem;" />
             <div class="title">
-              <span class="title-text">总部协同运营管控可视化平台</span>
+              <span class="title-text">国网配电网运行情况</span>
               <dv-decoration-6
                 class="title-bototm"
                 :reverse="true"
@@ -41,7 +41,7 @@
           </div>
           <div style="width: 40%" class="d-flex">
             <div class="react-left bg-color-blue mr-3">
-              <span class="text fw-b">浙江省</span>
+              <span class="text fw-b"></span>
             </div>
             <div
               class="react-left mr-4"
@@ -54,43 +54,49 @@
         </div>
 
         <div class="body-box">
-          <!-- 第三行数据 -->
           <div class="left-box">
             <div>
               <dv-border-box-12>
-                <centerLeft1 />
+                <leftTop />
               </dv-border-box-12>
             </div>
-<!--            <div>-->
-<!--              <dv-border-box-12>-->
-<!--                <centerLeft2 />-->
-<!--              </dv-border-box-12>-->
-<!--            </div>-->
-            <!-- 中间 -->
             <div>
               <dv-border-box-13>
-                <bottomLeft />
+                <leftCenter />
               </dv-border-box-13>
             </div>
-            <!-- 中间 -->
-<!--            <div>-->
-<!--              <centerRight2 />-->
-<!--            </div>-->
-          </div>
-          <div class="center-box">
             <div>
-              <centerLeft2 />
+              <dv-border-box-13>
+                <leftBottom />
+              </dv-border-box-13>
             </div>
           </div>
 
-          <!-- 第四行数据 -->
-          <div class="right-box">
+          <div class="center-box">
             <div>
-              <center />
+              <centerTop />
             </div>
             <div>
+                <dv-border-box-11>
+                    <centerBottom />
+                </dv-border-box-11>
+            </div>
+          </div>
+
+          <div class="right-box">
+            <div>
+              <dv-border-box-12>
+               <rightTop />
+              </dv-border-box-12>
+            </div>
+              <div>
+                  <dv-border-box-13>
+                      <rightCenter />
+                  </dv-border-box-13>
+              </div>
+            <div>
               <dv-border-box-13>
-                <bottomRight />
+                <rightBottom />
               </dv-border-box-13>
             </div>
           </div>
@@ -102,13 +108,18 @@
 
 <script>
 import { formatTime } from '../utils/index.js'
-import centerLeft1 from "./centerLeft1";
-import centerLeft2 from "./centerLeft2";
-// import centerRight1 from "./centerRight1";
-// import centerRight2 from "./centerRight2";
-import center from "./center";
-import bottomLeft from "./bottomLeft";
-import bottomRight from "./bottomRight";
+
+import leftTop from "./leftTop";
+import leftCenter from "./leftCenter";
+import leftBottom from "./leftBottom";
+
+import centerTop from "./centerTop";
+import centerBottom from "./centerBottom";
+
+import rightTop from "./rightTop";
+import rightCenter from  "./rightCenter"
+import rightBottom from "./rightBottom";
+
 export default {
   data () {
     return {
@@ -120,13 +131,14 @@ export default {
     };
   },
   components: {
-    centerLeft1,
-    centerLeft2,
-    // centerRight1,
-    // centerRight2,
-    center,
-    bottomLeft,
-    bottomRight
+    leftTop,
+    leftCenter,
+    leftBottom,
+    centerTop,
+    centerBottom,
+    rightTop,
+    rightCenter,
+    rightBottom
   },
   mounted () {
     this.timeFn();

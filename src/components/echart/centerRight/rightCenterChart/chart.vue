@@ -50,7 +50,7 @@ export default {
           calculable: true,
           series: [
             {
-              name: "派发工单",
+              name: "投诉类别",
               type: "pie",
               radius: [10, 60],
               roseType: "area",

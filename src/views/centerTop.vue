@@ -25,11 +25,11 @@ export default {
 <style lang="scss">
 #centreLeft2 {
   padding: 0.2rem;
-  height: 5.125rem;
+  height: 6.125rem;
   min-width: 3.75rem;
   border-radius: 0.0625rem;
-  margin-left:0.25rem;
-  margin-right:0.25rem;
+  margin-left:0.1rem;
+  margin-right:0.1rem;
   /*.bg-color-black {*/
   /*  height: 4.8125rem;*/
   /*  border-radius: 0.125rem;*/
@@ -39,7 +39,7 @@ export default {
   }
   .chart-box {
     margin-top: 0.2rem;
-    width: 2.125rem;
+    width: 4.125rem;
     height: 2.125rem;
     .active-ring-name {
       padding-top: 0.125rem;

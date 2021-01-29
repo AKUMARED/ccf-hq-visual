@@ -10,13 +10,15 @@ export default {
   data () {
     return {
       cdata: {
-        xData: ["跳闸条次数", "低电压条次数", "轻载条次数", "重过载条次数"],
+        xData: ["客户内部故障", "低压故障", "非电力故障", "计量故障","高压故障","停电原因查询","电能质量故障"],
         seriesData: [
-          { value: 10, name: "跳闸条次数" },
-          { value: 5, name: "低电压条次数" },
-          { value: 15, name: "轻载条次数" },
-          { value: 25, name: "重过载条次数" },
-
+          { value: 4795, name: "客户内部故障" },
+          { value: 3336, name: "低压故障" },
+          { value: 1816, name: "非电力故障" },
+          { value: 956, name: "计量故障" },
+          { value: 499, name: "高压故障" },
+          { value: 468, name: "停电原因查询" },
+          { value: 54, name: "电能质量故障" },
         ]
       }
     }

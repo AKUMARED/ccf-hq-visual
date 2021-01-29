@@ -4,8 +4,8 @@
       id="centreLeft2Chart"
       ref="centreLeft2ChartRef"
       :options="options"
-      height="24.5rem"
-      width="8.125rem"
+      height="8.5rem"
+      width="8.525rem"
     ></Echart>
   </div>
 </template>
@@ -36,39 +36,146 @@ export default {
         };
         let seriesData = [
           {
-            name: '杭州市',
+            name: '北京市',
           },
           {
-            name: '湖州市',
+            name: '天津市',
           },
           {
-            name: '嘉兴市',
+            name: '河北省',
           },
           {
-            name: '宁波市',
+            name: '山西省',
           },
           {
-            name: '绍兴市',
+            name: '内蒙古自治区',
           },
           {
-            name: '台州市',
+            name: '辽宁省',
           },
           {
-            name: '金华市',
+            name: '吉林省',
           },
           {
-            name: '温州市',
+            name: '黑龙江省',
           },
           {
-            name: '丽水市',
+            name: '上海市',
           },
           {
-            name: '衢州市',
+            name: '江苏省',
           },
           {
-            name: '舟山市',
+            name: '浙江省',
+          },
+          {
+            name: '安徽省',
+          },
+          {
+            name: '福建省',
+          },
+          {
+            name: '江西省',
+          },
+          {
+            name: '山东省',
+          },
+          {
+            name: '河南省',
+          },
+          {
+            name: '湖北省',
+          },
+          {
+            name: '湖南省',
+          },
+          {
+            name: '广东省',
+          },
+          {
+            name: '山东省',
+          },
+          {
+            name: '广西壮族自治区',
+          },
+          {
+            name: '海南省',
+          },
+          {
+            name: '重庆市',
+          },
+          {
+            name: '四川省',
+          },
+          {
+            name: '贵州省',
+          },
+          {
+            name: '云南省',
+          },
+          {
+            name: '西藏自治区',
+          },
+          {
+            name: '陕西省',
+          },
+          {
+            name: '甘肃省',
+          },
+          {
+            name: '青海省',
+          },
+          {
+            name: '宁夏回族自治区',
+          },
+          {
+            name: '新疆维吾尔自治区',
+          },
+          {
+            name: '台湾省',
+          },
+          {
+            name: '香港特别行政区',
+          },
+          {
+            name: '澳门特别行政区',
           },
         ];
+        // let seriesData = [
+        //   {
+        //     name: '杭州市',
+        //   },
+        //   {
+        //     name: '湖州市',
+        //   },
+        //   {
+        //     name: '嘉兴市',
+        //   },
+        //   {
+        //     name: '宁波市',
+        //   },
+        //   {
+        //     name: '绍兴市',
+        //   },
+        //   {
+        //     name: '台州市',
+        //   },
+        //   {
+        //     name: '金华市',
+        //   },
+        //   {
+        //     name: '温州市',
+        //   },
+        //   {
+        //     name: '丽水市',
+        //   },
+        //   {
+        //     name: '衢州市',
+        //   },
+        //   {
+        //     name: '舟山市',
+        //   },
+        // ];
         let convertData = function (data) {
           let scatterData = [];
           for (var i = 0; i < data.length; i++) {
@@ -115,10 +222,10 @@ export default {
           geo: {
             show: true,
             aspectScale: 0.85, //长宽比
-            zoom: 1.2,
-            top: '10%',
-            left: '16%',
-            map: '浙江',
+            zoom: 1.25,
+            top: '12%',
+            left: '10%',
+            map: '中国',
             roam: false,
             itemStyle: {
               normal: {
@@ -137,10 +244,10 @@ export default {
               name: '相关指数',
               type: 'map',
               aspectScale: 0.85, //长宽比
-              zoom: 1.2,
-              mapType: '浙江', // 自定义扩展图表类型
-              top: '10%',
-              left: '16%',
+              zoom: 1.25,
+              mapType: '中国', // 自定义扩展图表类型
+              top: '12%',
+              left: '10%',
               itemStyle: {
                 normal: {
                   color: 'red',
@@ -160,10 +267,10 @@ export default {
               },
               label: {
                 formatter: params => `${params.name}`,
-                show: true,
+                show: false,
                 position: 'insideRight',
                 textStyle: {
-                  fontSize: 14,
+                  fontSize: 8,
                   color: '#efefef',
                 },
                 emphasis: {
@@ -199,82 +306,82 @@ export default {
           ],
         };
         // 重新选择区域
-        this.handleMapRandomSelect();
+        // this.handleMapRandomSelect();
       },
       immediate: true,
       deep: true,
     },
   },
   methods: {
-    // 开启定时器
-    startInterval() {
-      const _self = this;
-      // 应通过接口获取配置时间，暂时写死5s
-      const time = 2000;
-      if (this.intervalId !== null) {
-        clearInterval(this.intervalId);
-      }
-      this.intervalId = setInterval(() => {
-        _self.reSelectMapRandomArea();
-      }, time);
-    },
-    // 重新随机选中地图区域
-    reSelectMapRandomArea() {
-      const length = 9;
-      this.$nextTick(() => {
-        const map = this.$refs.centreLeft2ChartRef.chart;
-        let index = Math.floor(Math.random() * length);
-        while (index === this.preSelectMapIndex || index >= length) {
-          index = Math.floor(Math.random() * length);
-        }
-        map.dispatchAction({
-          type: 'mapUnSelect',
-          seriesIndex: 0,
-          dataIndex: this.preSelectMapIndex,
-        });
-        map.dispatchAction({
-          type: 'showTip',
-          seriesIndex: 0,
-          dataIndex: index,
-        });
-        map.dispatchAction({
-          type: 'mapSelect',
-          seriesIndex: 0,
-          dataIndex: index,
-        });
-        this.preSelectMapIndex = index;
-      });
-    },
-    handleMapRandomSelect() {
-      this.$nextTick(() => {
-        const map = this.$refs.centreLeft2ChartRef.chart;
-        const _self = this;
-        setTimeout(() => {
-          _self.reSelectMapRandomArea();
-        }, 0);
-        // 移入区域，清除定时器、取消之前选中并选中当前
-        map.on('mouseover', function (params) {
-          clearInterval(_self.intervalId);
-          map.dispatchAction({
-            type: 'mapUnSelect',
-            seriesIndex: 0,
-            dataIndex: _self.preSelectMapIndex,
-          });
-          map.dispatchAction({
-            type: 'mapSelect',
-            seriesIndex: 0,
-            dataIndex: params.dataIndex,
-          });
-          _self.preSelectMapIndex = params.dataIndex;
-        });
-        // 移出区域重新随机选中地图区域，并开启定时器
-        map.on('globalout', function () {
-          _self.reSelectMapRandomArea();
-          _self.startInterval();
-        });
-        this.startInterval();
-      });
-    },
+    // // 开启定时器
+    // startInterval() {
+    //   const _self = this;
+    //   // 应通过接口获取配置时间，暂时写死5s
+    //   const time = 9000;
+    //   if (this.intervalId !== null) {
+    //     clearInterval(this.intervalId);
+    //   }
+    //   this.intervalId = setInterval(() => {
+    //     _self.reSelectMapRandomArea();
+    //   }, time);
+    // },
+    // // 重新随机选中地图区域
+    // reSelectMapRandomArea() {
+    //   const length = 9;
+    //   this.$nextTick(() => {
+    //     const map = this.$refs.centreLeft2ChartRef.chart;
+    //     let index = Math.floor(Math.random() * length);
+    //     while (index === this.preSelectMapIndex || index >= length) {
+    //       index = Math.floor(Math.random() * length);
+    //     }
+    //     map.dispatchAction({
+    //       type: 'mapUnSelect',
+    //       seriesIndex: 0,
+    //       dataIndex: this.preSelectMapIndex,
+    //     });
+    //     map.dispatchAction({
+    //       type: 'showTip',
+    //       seriesIndex: 0,
+    //       dataIndex: index,
+    //     });
+    //     map.dispatchAction({
+    //       type: 'mapSelect',
+    //       seriesIndex: 0,
+    //       dataIndex: index,
+    //     });
+    //     this.preSelectMapIndex = index;
+    //   });
+    // },
+    // handleMapRandomSelect() {
+    //   this.$nextTick(() => {
+    //     const map = this.$refs.centreLeft2ChartRef.chart;
+    //     const _self = this;
+    //     setTimeout(() => {
+    //       _self.reSelectMapRandomArea();
+    //     }, 0);
+    //     // 移入区域，清除定时器、取消之前选中并选中当前
+    //     map.on('mouseover', function (params) {
+    //       clearInterval(_self.intervalId);
+    //       map.dispatchAction({
+    //         type: 'mapUnSelect',
+    //         seriesIndex: 0,
+    //         dataIndex: _self.preSelectMapIndex,
+    //       });
+    //       map.dispatchAction({
+    //         type: 'mapSelect',
+    //         seriesIndex: 0,
+    //         dataIndex: params.dataIndex,
+    //       });
+    //       _self.preSelectMapIndex = params.dataIndex;
+    //     });
+    //     // 移出区域重新随机选中地图区域，并开启定时器
+    //     map.on('globalout', function () {
+    //       _self.reSelectMapRandomArea();
+    //       _self.startInterval();
+    //     });
+    //     this.startInterval();
+    //   });
+    // },
   },
 };
 </script>

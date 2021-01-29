@@ -20,10 +20,10 @@
       background-repeat: no-repeat;
 
       .title-text {
-        font-size: 0.3rem;
+        font-size: 0.315rem;
         position: absolute;
         bottom: 0;
-        left: 30%;
+        left: 35%;
         transform: translate(-20%);
       }
 
@@ -88,23 +88,25 @@
 
     .body-box {
       margin-top: 0.2rem;
-      display: flex;
+      display: grid;
       flex-direction: row;
+      grid-template-columns:3fr 4fr 3fr;
       //下方区域的布局
       .left-box {
         //display: grid;
-        grid-template-rows:2fr 4fr;
+        grid-template-rows:2fr 2fr 4fr;
       }
 
       // 底部数据
       .right-box {
         //margin-top: 0.125rem;
         //display: grid;
-        grid-template-rows:2fr 4fr;
+        //grid-template-rows:4fr 4fr;
       }
       .center-box {
         margin-top: 0.125rem;
-        display: grid;
+        //display: grid;
+        grid-template-rows:auto auto;
       }
     }
   }
