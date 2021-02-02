@@ -117,8 +117,10 @@ import centerTop from "./centerTop";
 import centerBottom from "./centerBottom";
 
 import rightTop from "./rightTop";
-import rightCenter from  "./rightCenter"
-import rightBottom from "./rightBottom";
+import rightCenter from "./rightCenter"
+import rightBottom  from "./rightBottom";
+
+
 
 export default {
   data () {

@@ -1,137 +1,143 @@
 <template>
   <div id="center">
-    <div class="up">
-      <div class="bg-color-black item">
-        <p class="ml-4 colorBlue fw-b">{{titleItem[0].title}}</p>
-        <div>
-          <dv-digital-flop :config="titleItem[0].number" style="width:1rem;height:.425rem;margin-left: 0.45rem" />
+    <div class="left">
+        <div style="margin-left: 0.1rem; width: 100%" >
+            <div >
+                <div class=" item" v-for="item in titleItem" :key="item.title">
+                    <p class="" style="font-size:0.25rem; width: 3.25rem;text-align:center;color: #ffe339">
+                        {{item.title}}:</p>
+                    <div>
+                        <dv-digital-flop :config="item.number" style="width:1rem;height:.325rem;margin-left: 0.05rem"/>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="bg-color-black item">
-        <p class="ml-4 colorBlue fw-b">{{titleItem[1].title}}</p>
-        <div>
-          <dv-digital-flop :config="titleItem[1].number" style="width:1rem;height:.425rem;margin-left: 0.45rem" />
-        </div>
-      </div>
-      <div class="bg-color-black item">
-        <p class="ml-4 colorBlue fw-b">{{titleItem[2].title}}</p>
-        <div>
-          <dv-digital-flop :config="titleItem[2].number" style="width:1rem;height:.425rem;margin-left: 0.45rem" />
-        </div>
-      </div>
     </div>
-    <div class="down">
+    <div class="right">
       <div class="ranking bg-color-black">
-        <span style="color:#5cd9e8">
-          <icon name="align-left"></icon>
-        </span>
-        <span class="fs-xl text mx-2 mb-1" style="font-size: 0.175rem">每百万户派发量较多的单位</span>
-        <dv-scroll-ranking-board :config="ranking" style="height:2.75rem" />
-      </div>
-      <div class="d-flex jc-center">
-        <CentreLeft1Chart />
+                <span style="color:#5cd9e8">
+                    <icon name="align-left"></icon>
+                </span>
+        <span class="text mx-2 mb-1" style="font-size: 0.175rem">配变情况：{{titleItem[0].title}}</span>
+        <dv-scroll-ranking-board :config="ranking" style="height:3rem"/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-  import CentreLeft1Chart from "@/components/echart/centerLeft/centerLeft1Chart";
-export default {
-  data () {
-    return {
-      titleItem: [
-        {
-          title: "共受理故障报修工单",
-          number: {
-            number: [4.43],
-            toFixed: 1,
-            content: "{nt}"+"万件"
-          }
-        },
-        {
-          title: "派发故障报修工单",
-          number: {
-            number: [1.19],
-            toFixed: 1,
-            content: "{nt}"+"万件"
-          }
-        },
-        {
-          title: "故障报修一次解决率",
-          number: {
-            number: [72.48],
-            toFixed: 1,
-            content: "{nt}"+"%"
-          }
-        },
-
-      ],
-      ranking: {
-        data: [
+  export default {
+    data() {
+      return {
+        titleItem: [
           {
-            name: "西藏",
-            value: 403.79
+            title: "配变停运",
+            number: {
+              number: [120],
+              toFixed: 1,
+              content: "{nt}"
+            }
           },
           {
-            name: "上海",
-            value: 89.44
+            title: "低电压",
+            number: {
+              number: [18],
+              toFixed: 1,
+              content: "{nt}"
+            }
           },
           {
-            name: "天津",
-            value: 78.31
+            title: "重过载",
+            number: {
+              number: [2],
+              toFixed: 1,
+              content: "{nt}"
+            }
           },
-          {
-            name: "青海",
-            value: 72.09
-          },
-          {
-            name: "北京",
-            value: 54.70
-          },
+            {
+                title: "三相不平衡",
+                number: {
+                    number: [2],
+                    toFixed: 1,
+                    content: "{nt}"
+                }
+            }
         ],
-        carousel: "single",
-        unit: "件"
-      },
-    };
-  },
-  components: {
-    CentreLeft1Chart
-  }
-};
+        ranking: {
+          data: [
+            {
+              name: "北京",
+              value: 120
+            },
+            {
+              name: "天津",
+              value: 2
+            },
+            {
+              name: "上海",
+              value: 14
+            },
+            {
+              name: "重庆",
+              value: 18
+            },
+            {
+              name: "冀北",
+              value: 106
+            },
+          ],
+          carousel: "single",
+          unit: "台次"
+        },
+      };
+    },
+  };
 </script>
 
 <style lang="scss" scoped>
-#center {
-  display: flex;
-  flex-direction: column;
-  .up {
-    width: 100%;
+  @import "../common/font/font.css";
+
+  #center {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    .item {
-      border-radius: 0.225rem;
-      padding-top: 0.1rem;
-      margin-top: 0.2rem;
-      width: 28%;
-      height: 0.675rem;
+    flex-direction: row;
+
+    .left {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        margin-left: 0.1rem;
+        justify-content: space-around;
+        .item {
+            display: flex;
+            margin-top: 0.25rem;
+            margin-left: 0.2rem;
+            flex-direction: row;
+            width: 90%;
+            height: 0.625rem;
+        }
+    }
+
+    .right {
+      padding: 0.05rem 0.05rem 0;
+      width: 100%;
+      display: flex;
+      height: 3.75rem;
+      justify-content: space-between;
+
+      .bg-color-black {
+        border-radius: 0.0625rem;
+      }
+
+      .ranking {
+        margin: 0.125rem 0.325rem;
+        padding: 0.125rem;
+        width: 100%;
+      }
+    }
+
+    .itemNumber {
+      font-family: "LCD", serif;
+      color: #1a5cd7;
     }
   }
-  .down {
-    padding: 0.07rem 0.05rem;
-    padding-bottom: 0;
-    width: 100%;
-    display: flex;
-    height: 3.1875rem;
-    justify-content: space-between;
-    .bg-color-black {
-      border-radius: 0.0625rem;
-    }
-    .ranking {
-      padding: 0.125rem;
-      width: 59%;
-    }
-  }
-}
 </style>

@@ -1,62 +1,105 @@
 <template>
-  <div id="bottomRight">
-    <div class="bg-color-black">
-      <div class="d-flex pt-2 pl-2">
-        <span style="color:#5cd9e8">
-          <icon name="chart-area"></icon>
-        </span>
-        <div class="d-flex">
-          <span class="fs-xl text mx-2">95598工单情况</span>
-<!--          <div class="decoration2">-->
-<!--            <dv-decoration-2 :reverse="true" style="width:5px;height:6rem;" />-->
-<!--          </div>-->
+  <div id="center">
+    <div class="up">
+      <div class="bg-color-black item">
+        <p class="ml-3 colorBlue fw-b" style="width: 95%; font-size: 0.215rem;align-self: center">{{titleItem[0].title}}</p>
+        <div style="align-self: center" >
+          <dv-digital-flop :config="titleItem[0].number"  />
         </div>
       </div>
-      <div>
-        <BottomRightChart />
+    </div>
+    <div class="down">
+      <div class="d-flex jc-center">
+        <RightCenterChart />
+      </div>
+      <div class="ranking bg-color-black">
+        <dv-scroll-ranking-board :config="ranking" style="height:2.75rem" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import BottomRightChart from "@/components/echart/bottom/bottomRightChart";
+  import RightCenterChart from "@/components/echart/centerRight/rightCenterChart";
 export default {
-  data() {
-    return {};
+  data () {
+    return {
+      titleItem: [
+        {
+          title: "投诉工单",
+          number: {
+            number: [79],
+            toFixed: 1,
+            content: "{nt}"+"件"
+          }
+        },
+
+
+      ],
+      ranking: {
+        data: [
+          {
+            name: "四川",
+            value: 20
+          },
+          {
+            name: "湖南",
+            value: 10
+          },
+          {
+            name: "重庆",
+            value: 7
+          },
+          {
+            name: "陕西",
+            value: 6
+          },
+          {
+            name: "安徽",
+            value: 5
+          },
+        ],
+        carousel: "single",
+        unit: "件"
+      },
+    };
   },
   components: {
-    BottomRightChart
-  },
-  mounted() {},
-  methods: {}
+    RightCenterChart
+  }
 };
 </script>
 
-<style lang="scss">
-#bottomRight {
-  margin-top: 1rem;
-  padding: 0.2rem 0.2rem 0;
-  height: 5.5rem;
-  min-width: 3.75rem;
-  border-radius: 0.0625rem;
-  .bg-color-black {
-    height: 5.1875rem;
-    border-radius: 0.125rem;
+<style lang="scss" scoped>
+#center {
+  display: flex;
+  flex-direction: column;
+  .up {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    .item {
+      display: flex;
+      flex-direction: row;
+      border-radius: 0.225rem;
+      padding-top: 0.1rem;
+      margin-top: 0.2rem;
+      height: 0.675rem;
+    }
   }
-  .text {
-    color: #c3cbde;
-  } //下滑线动态
-  .decoration2 {
-    position: absolute;
-    right: 0.125rem;
-  }
-  .chart-box {
-    margin-top: 0.2rem;
-    width: 2.125rem;
-    height: 2.125rem;
-    .active-ring-name {
-      padding-top: 0.125rem;
+  .down {
+    padding: 0.07rem 0.05rem 0;
+    width: 95%;
+    display: flex;
+    height: 3rem;
+    justify-content: space-between;
+    .bg-color-black {
+      border-radius: 0.0625rem;
+    }
+    .ranking {
+      padding: 0.125rem;
+      width: 59%;
     }
   }
 }

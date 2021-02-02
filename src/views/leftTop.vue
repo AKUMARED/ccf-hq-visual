@@ -1,40 +1,24 @@
 <template>
     <div id="center">
         <div class="left">
-            <div class="bg-color-black" style="margin-left: 0.1rem; width: 100%" >
-                <span style="color:#5cd9e8">
-                    <icon name="align-left"></icon>
-                </span>
-                    <span class="text mx-2 mb-1" style="font-size: 0.175rem">配电线路故障异常</span>
-                    <div style=" display: flex; flex-direction: row;">
+            <div style="margin-left: 0.1rem; width: 100%" >
+                    <div >
                         <div class=" item" v-for="item in titleItem" :key="item.title">
-                            <dv-digital-flop :config="item.number" style="width:1rem;height:.325rem;margin-left: 0.05rem"/>
-                            <p class="" style="font-size:0.175rem; width: 1.125rem;text-align:center;color: #ffe339">
-                                {{item.title}}</p>
+                            <p class="" style="font-size:0.3rem; width: 3.525rem;text-align:center;color: #ffe339">
+                                {{item.title}}:</p>
+                            <div>
+                                <dv-digital-flop :config="item.number" style="width:1rem;height:.325rem;margin-left: 0.05rem"/>
+                            </div>
                         </div>
                     </div>
             </div>
-            <div class="bg-color-black" style="margin-left: 0.1rem; width: 100%" >
-                <span style="color:#5cd9e8">
-                    <icon name="align-left"></icon>
-                </span>
-                <span class="text mx-2 mb-1" style="font-size: 0.175rem">平均每万条线路</span>
-                <div style=" display: flex; flex-direction: row;">
-                    <div class=" item" v-for="item in titleItem" :key="item.title">
-                        <dv-digital-flop :config="item.number" style="width:1rem;height:.325rem;margin-left: 0.05rem"/>
-                        <p class="" style="font-size:0.175rem; width: 1.125rem;text-align:center;color: #ffe339">
-                            {{item.title}}</p>
-                    </div>
-                </div>
-            </div>
-
         </div>
         <div class="right">
             <div class="ranking bg-color-black">
                 <span style="color:#5cd9e8">
                     <icon name="align-left"></icon>
                 </span>
-                <span class="text mx-2 mb-1" style="font-size: 0.175rem">{{titleItem[0].title}}</span>
+                <span class="text mx-2 mb-1" style="font-size: 0.175rem">配电线路异常：{{titleItem[0].title}}</span>
                 <dv-scroll-ranking-board :config="ranking" style="height:3rem"/>
             </div>
         </div>
@@ -95,7 +79,7 @@
                         },
                     ],
                     carousel: "single",
-                    unit: "台次"
+                    unit: "次"
                 },
             };
         },
@@ -119,8 +103,9 @@
             .item {
                 display: flex;
                 margin-top: 0.25rem;
-                flex-direction: column;
-                width: 33%;
+                margin-left: 0.5rem;
+                flex-direction: row;
+                width: 60%;
                 height: 0.625rem;
             }
         }
