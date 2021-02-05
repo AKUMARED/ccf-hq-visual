@@ -2,15 +2,42 @@
     <div id="center">
         <div class="left">
             <div style="margin-left: 0.1rem; width: 100%" >
-                    <div >
-                        <div class=" item" v-for="item in titleItem" :key="item.title">
-                            <p class="" style="font-size:0.3rem; width: 3.525rem;text-align:center;color: #ffe339">
-                                {{item.title}}:</p>
-                            <div>
-                                <dv-digital-flop :config="item.number" style="width:1rem;height:.325rem;margin-left: 0.05rem"/>
-                            </div>
+                <div >
+                    <div class=" item" >
+                        <p class="" style="font-size:0.3rem; width: 3.2rem;text-align:center;color: #ffe339">
+                            线路总数:</p>
+                        <div>
+                            <p class="number">{{feederCount}}</p>
                         </div>
                     </div>
+                </div>
+                <div >
+                    <div class=" item" >
+                        <p class="" style="font-size:0.3rem; width: 3.2rem;text-align:center;color: #ffe339">
+                            跳闸:</p>
+                        <div>
+                            <p class="number">{{tripCount}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div >
+                    <div class=" item" >
+                        <p class="" style="font-size:0.3rem; width: 3.2rem;text-align:center;color: #ffe339">
+                            重载:</p>
+                        <div>
+                            <p class="number">{{heavyLoadCount}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div >
+                    <div class=" item" >
+                        <p class="" style="font-size:0.3rem; width: 3.2rem;text-align:center;color: #ffe339">
+                            过载:</p>
+                        <div>
+                            <p class="number">{{overLoadCount}}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="right">
@@ -18,7 +45,7 @@
                 <span style="color:#5cd9e8">
                     <icon name="align-left"></icon>
                 </span>
-                <span class="text mx-2 mb-1" style="font-size: 0.175rem">配电线路异常：{{titleItem[0].title}}</span>
+                <span class="text mx-2 mb-1" style="font-size: 0.175rem">配电线路异常：</span>
                 <dv-scroll-ranking-board :config="ranking" style="height:3rem"/>
             </div>
         </div>
@@ -30,6 +57,14 @@
         data() {
             return {
                 titleItem: [
+                    {
+                        title: "线路总数",
+                        number: {
+                            number: [440],
+                            toFixed: 1,
+                            content: "{nt}"
+                        }
+                    },
                     {
                         title: "跳闸",
                         number: {
@@ -83,6 +118,21 @@
                 },
             };
         },
+
+        computed:{
+            feederCount () {
+                return this.$store.state.Feeder.feederCount
+            },
+            tripCount () {
+                return this.$store.state.Feeder.tripCount
+            },
+            heavyLoadCount () {
+                return this.$store.state.Feeder.heavyLoadCount
+            },
+            overLoadCount () {
+                return this.$store.state.Feeder.overLoadCount
+            }
+        }
     };
 </script>
 
@@ -103,10 +153,18 @@
             .item {
                 display: flex;
                 margin-top: 0.25rem;
-                margin-left: 0.5rem;
+                margin-left: 0.3rem;
                 flex-direction: row;
-                width: 60%;
+                width: 90%;
                 height: 0.625rem;
+                .number{
+                    font-size: 24px;
+                    color: #3de7c9;
+                    text-shadow: 0.01rem 0.01rem 0.3rem #00f2fc;
+                    width:1rem;
+                    height:.325rem;
+                    margin-left: 0.05rem
+                }
             }
         }
 

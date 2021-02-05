@@ -15,6 +15,77 @@ export default {
   data () {
     return {
       options: {},
+      // 定义颜色
+      colorList: {
+        linearYtoG: {
+          type: "linear",
+          x: 0,
+          y: 0,
+          x2: 1,
+          y2: 1,
+          colorStops: [
+            {
+              offset: 0,
+              color: "#f5b44d"
+            },
+            {
+              offset: 1,
+              color: "#28f8de"
+            }
+          ]
+        },
+        linearGtoB: {
+          type: "linear",
+          x: 0,
+          y: 0,
+          x2: 1,
+          y2: 0,
+          colorStops: [
+            {
+              offset: 0,
+              color: "#43dfa2"
+            },
+            {
+              offset: 1,
+              color: "#28f8de"
+            }
+          ]
+        },
+        linearBtoG: {
+          type: "linear",
+          x: 0,
+          y: 0,
+          x2: 1,
+          y2: 0,
+          colorStops: [
+            {
+              offset: 0,
+              color: "#1c98e8"
+            },
+            {
+              offset: 1,
+              color: "#28f8de"
+            }
+          ]
+        },
+        areaBtoG: {
+          type: "linear",
+          x: 0,
+          y: 0,
+          x2: 0,
+          y2: 1,
+          colorStops: [
+            {
+              offset: 0,
+              color: "rgba(35,184,210,.2)"
+            },
+            {
+              offset: 1,
+              color: "rgba(35,184,210,0)"
+            }
+          ]
+        }
+      }
     };
   },
   components: {
@@ -28,35 +99,64 @@ export default {
   },
   watch: {
     cdata: {
-      handler (newData) {
+      handler () {
         this.options = {
-          color: [
-            "#37a2da",
-            "#32c5e9",
-            "#9fe6b8",
-            "#ffdb5c",
-            "#ff9f7f",
-            "#fb7293",
-            "#e7bcf3",
-            "#8378ea"
-          ],
+          // title: {
+          //   text: "",
+          //   textStyle: {
+          //     color: "#D3D6DD",
+          //     fontSize: 24,
+          //     fontWeight: "normal"
+          //   },
+          //   subtextStyle: {
+          //     color: "#fff",
+          //     fontSize: 12
+          //   },
+          //   top: 50,
+          //   left: 80
+          // },
+          legend: {
+            top: '15%',
+            left: 'left',
+            orient: 'vertical',
+          },
           tooltip: {
-            trigger: "item",
-            formatter: "{a} <br/>{b} : {c} ({d}%)"
+            trigger: "item"
           },
-          toolbox: {
-            show: true
-          },
-          calculable: true,
           series: [
             {
-              name: "投诉类别",
-              type: "pie",
-              radius: [10, 60],
-              roseType: "area",
-              center: ["50%", "40%"],
-              data: newData.seriesData
-            }
+              name: '',
+              type: 'pie',
+              radius: ['30%', '50%'],
+              center: ["70%", "40%"],
+              avoidLabelOverlap: false,
+              itemStyle: {
+                borderRadius: 10,
+                borderColor: '#fff',
+                borderWidth: 2
+              },
+              label: {
+                show: false,
+                position: 'center'
+              },
+              emphasis: {
+                label: {
+                  show: true,
+                  fontSize: '10',
+                  fontWeight: 'bold'
+                }
+              },
+              labelLine: {
+                show: false
+              },
+              data: [
+                {value: 44, name: '计划停电'},
+                {value: 16, name: '临时停电'},
+                {value: 65, name: '故障停电'},
+                {value: 0, name: '其他停电'},
+                {value: 4, name: '有序用电停电'}
+              ]
+            },
           ]
         }
       },

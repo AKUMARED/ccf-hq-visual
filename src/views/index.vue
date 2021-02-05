@@ -8,7 +8,7 @@
           <div class="d-flex jc-center">
             <dv-decoration-8 :color="['#568aea', '#000000']" style="width:2.5rem;height:.625rem;" />
             <div class="title">
-              <span class="title-text">国网配电网运行情况</span>
+              <span class="title-text">配电网运行情况在线统计</span>
               <dv-decoration-6
                 class="title-bototm"
                 :reverse="true"
@@ -36,12 +36,12 @@
               <span class="text"></span>
             </div>
             <div class="react-right ml-3" style="background-color: #0f1325;">
-              <span class="text colorBlue"></span>
+              <span class="text colorBlue">{{this.areaData.areaName}}</span>
             </div>
           </div>
           <div style="width: 40%" class="d-flex">
             <div class="react-left bg-color-blue mr-3">
-              <span class="text fw-b"></span>
+              <span class="text fw-b">数据刷新</span>
             </div>
             <div
               class="react-left mr-4"
@@ -74,10 +74,11 @@
 
           <div class="center-box">
             <div>
-              <centerTop />
+              <china    @map-change="mapClick"
+                        @back-change="backClick"/>
             </div>
             <div>
-                <dv-border-box-11>
+                <dv-border-box-11 :title="titleTrend">
                     <centerBottom />
                 </dv-border-box-11>
             </div>
@@ -113,12 +114,14 @@ import leftTop from "./leftTop";
 import leftCenter from "./leftCenter";
 import leftBottom from "./leftBottom";
 
-import centerTop from "./centerTop";
+// import centerTop from "./centerTop";
 import centerBottom from "./centerBottom";
 
 import rightTop from "./rightTop";
 import rightCenter from "./rightCenter"
 import rightBottom  from "./rightBottom";
+
+import china  from "./china";
 
 
 
@@ -130,21 +133,33 @@ export default {
       dateYear: null,
       dateWeek: null,
       weekday: ["周日", "周一", "周二", "周三", "周四", "周五", "周六"],
+      areaData: {
+        areaCode: "000000",
+        areaLevel: "county",
+        name: "中国",
+        areaName: "中国",
+      },
     };
   },
   components: {
     leftTop,
     leftCenter,
     leftBottom,
-    centerTop,
+    // centerTop,
     centerBottom,
     rightTop,
     rightCenter,
-    rightBottom
+    rightBottom,
+    china
   },
   mounted () {
     this.timeFn();
     this.cancelLoading();
+  },
+  computed:{
+    titleTrend(){
+        return this.$store.state.malfunction.MalfunctionType
+    }
   },
   methods: {
     timeFn () {
@@ -158,7 +173,15 @@ export default {
       setTimeout(() => {
         this.loading = false;
       }, 500);
-    }
+    },
+    mapClick(data) {
+      this.areaData = data;
+      console.log(this.areaData)
+    },
+    backClick(data) {
+      this.areaData = data;
+      console.log(this.areaData)
+    },
   }
 };
 </script>

@@ -13,6 +13,11 @@ import 'vue-awesome/icons/chart-pie.js';
 import 'vue-awesome/icons/chart-line.js';
 import 'vue-awesome/icons/align-left.js';
 
+import axios from 'axios'
+Vue.prototype.$axios = axios
+axios.defaults.baseURL = '/api'
+Vue.config.productionTip = false
+
 // 全局注册图标
 Vue.component('icon', Icon);
 
@@ -28,9 +33,13 @@ import echarts from 'echarts'
 Vue.prototype.$echarts = echarts
 
 Vue.config.productionTip = false;
-
+Vue.use(Vuex);
 new Vue({
   router,
   store,
   render: (h) => h(App),
 }).$mount('#app');
+
+import Vuex from 'vuex'
+
+

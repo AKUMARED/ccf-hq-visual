@@ -109,7 +109,7 @@ export default {
               data: newData.rateData
             },
             {
-              name: "已贯通",
+              name: "",
               type: "bar",
               barWidth: 10,
               itemStyle: {

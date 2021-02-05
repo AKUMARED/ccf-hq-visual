@@ -6,7 +6,7 @@
           <icon name="chart-bar"></icon>
         </span>
         <div class="d-flex">
-
+          <span class="fs-xl text mx-2" style="font-size: 0.175rem">故障抢修时间</span>
         </div>
       </div>
       <div>

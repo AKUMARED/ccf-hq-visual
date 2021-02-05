@@ -4,7 +4,7 @@
       :options="options"
       id="centreLeft1Chart"
       height="3.75rem"
-      width="3.25rem"
+      width="6rem"
     ></Echart>
   </div>
 </template>
@@ -47,21 +47,39 @@ export default {
           toolbox: {
             show: true
           },
+          legend: {
+            top: '5%',
+            left: '10%',
+            orient: 'vertical',
+          },
           calculable: true,
           series: [
             {
-              name: "派发工单",
-              type: "pie",
-              selectedMode: 'single',
-              selectedOffset: 30,
-              clockwise: true,
-              radius: "40%",
-              center: ["50%", "40%"],
-              label: {
-                fontSize: 10,
-                color: '#235894',
-                alignTo: 'edge',
+              name: '访问来源',
+              type: 'pie',
+              radius: ['30%', '50%'],
+              center: ["75%", "40%"],
+              avoidLabelOverlap: false,
+              itemStyle: {
+                borderRadius: 10,
+                borderColor: '#fff',
+                borderWidth: 2
               },
+              label: {
+                show: false,
+                position: 'center'
+              },
+              emphasis: {
+                label: {
+                  show: true,
+                  fontSize: '10',
+                  fontWeight: 'bold'
+                }
+              },
+              labelLine: {
+                show: false
+              },
+
               data: newData.seriesData
             }
           ]

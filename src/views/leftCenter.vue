@@ -4,7 +4,7 @@
         <div style="margin-left: 0.1rem; width: 100%" >
             <div >
                 <div class=" item" v-for="item in titleItem" :key="item.title">
-                    <p class="" style="font-size:0.25rem; width: 3.25rem;text-align:center;color: #ffe339">
+                    <p class="" style="font-size:0.25rem; width: 3.2rem;text-align:center;color: #ffe339">
                         {{item.title}}:</p>
                     <div>
                         <dv-digital-flop :config="item.number" style="width:1rem;height:.325rem;margin-left: 0.05rem"/>

@@ -31,116 +31,116 @@ export default {
     cdata: {
       handler(newData) {
         // 设置点的位置(经纬度)
-        const geoCoordMap = {
-
-        };
-        let seriesData = [
-          {
-            name: '北京市',
-          },
-          {
-            name: '天津市',
-          },
-          {
-            name: '河北省',
-          },
-          {
-            name: '山西省',
-          },
-          {
-            name: '内蒙古自治区',
-          },
-          {
-            name: '辽宁省',
-          },
-          {
-            name: '吉林省',
-          },
-          {
-            name: '黑龙江省',
-          },
-          {
-            name: '上海市',
-          },
-          {
-            name: '江苏省',
-          },
-          {
-            name: '浙江省',
-          },
-          {
-            name: '安徽省',
-          },
-          {
-            name: '福建省',
-          },
-          {
-            name: '江西省',
-          },
-          {
-            name: '山东省',
-          },
-          {
-            name: '河南省',
-          },
-          {
-            name: '湖北省',
-          },
-          {
-            name: '湖南省',
-          },
-          {
-            name: '广东省',
-          },
-          {
-            name: '山东省',
-          },
-          {
-            name: '广西壮族自治区',
-          },
-          {
-            name: '海南省',
-          },
-          {
-            name: '重庆市',
-          },
-          {
-            name: '四川省',
-          },
-          {
-            name: '贵州省',
-          },
-          {
-            name: '云南省',
-          },
-          {
-            name: '西藏自治区',
-          },
-          {
-            name: '陕西省',
-          },
-          {
-            name: '甘肃省',
-          },
-          {
-            name: '青海省',
-          },
-          {
-            name: '宁夏回族自治区',
-          },
-          {
-            name: '新疆维吾尔自治区',
-          },
-          {
-            name: '台湾省',
-          },
-          {
-            name: '香港特别行政区',
-          },
-          {
-            name: '澳门特别行政区',
-          },
-        ];
+        // const geoCoordMap = {
+        //
+        // };
+        // let seriesData = [
+        //   {
+        //     name: '北京市',
+        //   },
+        //   {
+        //     name: '天津市',
+        //   },
+        //   {
+        //     name: '河北省',
+        //   },
+        //   {
+        //     name: '山西省',
+        //   },
+        //   {
+        //     name: '内蒙古自治区',
+        //   },
+        //   {
+        //     name: '辽宁省',
+        //   },
+        //   {
+        //     name: '吉林省',
+        //   },
+        //   {
+        //     name: '黑龙江省',
+        //   },
+        //   {
+        //     name: '上海市',
+        //   },
+        //   {
+        //     name: '江苏省',
+        //   },
+        //   {
+        //     name: '浙江省',
+        //   },
+        //   {
+        //     name: '安徽省',
+        //   },
+        //   {
+        //     name: '福建省',
+        //   },
+        //   {
+        //     name: '江西省',
+        //   },
+        //   {
+        //     name: '山东省',
+        //   },
+        //   {
+        //     name: '河南省',
+        //   },
+        //   {
+        //     name: '湖北省',
+        //   },
+        //   {
+        //     name: '湖南省',
+        //   },
+        //   {
+        //     name: '广东省',
+        //   },
+        //   {
+        //     name: '山东省',
+        //   },
+        //   {
+        //     name: '广西壮族自治区',
+        //   },
+        //   {
+        //     name: '海南省',
+        //   },
+        //   {
+        //     name: '重庆市',
+        //   },
+        //   {
+        //     name: '四川省',
+        //   },
+        //   {
+        //     name: '贵州省',
+        //   },
+        //   {
+        //     name: '云南省',
+        //   },
+        //   {
+        //     name: '西藏自治区',
+        //   },
+        //   {
+        //     name: '陕西省',
+        //   },
+        //   {
+        //     name: '甘肃省',
+        //   },
+        //   {
+        //     name: '青海省',
+        //   },
+        //   {
+        //     name: '宁夏回族自治区',
+        //   },
+        //   {
+        //     name: '新疆维吾尔自治区',
+        //   },
+        //   {
+        //     name: '台湾省',
+        //   },
+        //   {
+        //     name: '香港特别行政区',
+        //   },
+        //   {
+        //     name: '澳门特别行政区',
+        //   },
+        // ];
         // let seriesData = [
         //   {
         //     name: '杭州市',
@@ -176,19 +176,19 @@ export default {
         //     name: '舟山市',
         //   },
         // ];
-        let convertData = function (data) {
-          let scatterData = [];
-          for (var i = 0; i < data.length; i++) {
-            var geoCoord = geoCoordMap[data[i].name];
-            if (geoCoord) {
-              scatterData.push({
-                name: data[i].name,
-                value: geoCoord.concat(data[i].value),
-              });
-            }
-          }
-          return scatterData;
-        };
+        // let convertData = function (data) {
+        //   let scatterData = [];
+        //   for (var i = 0; i < data.length; i++) {
+        //     var geoCoord = geoCoordMap[data[i].name];
+        //     if (geoCoord) {
+        //       scatterData.push({
+        //         name: data[i].name,
+        //         value: geoCoord.concat(data[i].value),
+        //       });
+        //     }
+        //   }
+        //   return scatterData;
+        // };
         this.options = {
           showLegendSymbol: true,
           tooltip: {
@@ -219,26 +219,26 @@ export default {
             },
           },
           // 底部背景
-          geo: {
-            show: true,
-            aspectScale: 0.85, //长宽比
-            zoom: 1.25,
-            top: '12%',
-            left: '10%',
-            map: '中国',
-            roam: false,
-            itemStyle: {
-              normal: {
-                areaColor: 'rgba(0,0,0,0)',
-                shadowColor: 'rgba(7,114,204, .8)',
-                shadowOffsetX: 5,
-                shadowOffsetY: 5,
-              },
-              emphasis: {
-                areaColor: '#00aeef',
-              },
-            },
-          },
+          // geo: {
+          //   show: true,
+          //   aspectScale: 0.85, //长宽比
+          //   zoom: 1.25,
+          //   top: '12%',
+          //   left: '10%',
+          //   map: '中国',
+          //   roam: false,
+          //   itemStyle: {
+          //     normal: {
+          //       areaColor: 'rgba(0,0,0,0)',
+          //       shadowColor: 'rgba(7,114,204, .8)',
+          //       shadowOffsetX: 5,
+          //       shadowOffsetY: 5,
+          //     },
+          //     emphasis: {
+          //       areaColor: '#00aeef',
+          //     },
+          //   },
+          // },
           series: [
             {
               name: '相关指数',
@@ -281,28 +281,28 @@ export default {
               },
               data: newData,
             },
-            {
-              type: 'effectScatter',
-              coordinateSystem: 'geo',
-              symbolSize: 7,
-              effectType: 'ripple',
-              legendHoverLink: false,
-              showEffectOn: 'render',
-              rippleEffect: {
-                period: 4,
-                scale: 2.5,
-                brushType: 'stroke',
-              },
-              zlevel: 1,
-              itemStyle: {
-                normal: {
-                  color: '#99FBFE',
-                  shadowBlur: 5,
-                  shadowColor: '#fff',
-                },
-              },
-              data: convertData(seriesData),
-            },
+            // {
+            //   type: 'effectScatter',
+            //   coordinateSystem: 'geo',
+            //   symbolSize: 7,
+            //   effectType: 'ripple',
+            //   legendHoverLink: false,
+            //   showEffectOn: 'render',
+            //   rippleEffect: {
+            //     period: 4,
+            //     scale: 2.5,
+            //     brushType: 'stroke',
+            //   },
+            //   zlevel: 1,
+            //   itemStyle: {
+            //     normal: {
+            //       color: '#99FBFE',
+            //       shadowBlur: 5,
+            //       shadowColor: '#fff',
+            //     },
+            //   },
+            //   data: convertData(seriesData),
+            // },
           ],
         };
         // 重新选择区域
@@ -313,75 +313,7 @@ export default {
     },
   },
   methods: {
-    // // 开启定时器
-    // startInterval() {
-    //   const _self = this;
-    //   // 应通过接口获取配置时间，暂时写死5s
-    //   const time = 9000;
-    //   if (this.intervalId !== null) {
-    //     clearInterval(this.intervalId);
-    //   }
-    //   this.intervalId = setInterval(() => {
-    //     _self.reSelectMapRandomArea();
-    //   }, time);
-    // },
-    // // 重新随机选中地图区域
-    // reSelectMapRandomArea() {
-    //   const length = 9;
-    //   this.$nextTick(() => {
-    //     const map = this.$refs.centreLeft2ChartRef.chart;
-    //     let index = Math.floor(Math.random() * length);
-    //     while (index === this.preSelectMapIndex || index >= length) {
-    //       index = Math.floor(Math.random() * length);
-    //     }
-    //     map.dispatchAction({
-    //       type: 'mapUnSelect',
-    //       seriesIndex: 0,
-    //       dataIndex: this.preSelectMapIndex,
-    //     });
-    //     map.dispatchAction({
-    //       type: 'showTip',
-    //       seriesIndex: 0,
-    //       dataIndex: index,
-    //     });
-    //     map.dispatchAction({
-    //       type: 'mapSelect',
-    //       seriesIndex: 0,
-    //       dataIndex: index,
-    //     });
-    //     this.preSelectMapIndex = index;
-    //   });
-    // },
-    // handleMapRandomSelect() {
-    //   this.$nextTick(() => {
-    //     const map = this.$refs.centreLeft2ChartRef.chart;
-    //     const _self = this;
-    //     setTimeout(() => {
-    //       _self.reSelectMapRandomArea();
-    //     }, 0);
-    //     // 移入区域，清除定时器、取消之前选中并选中当前
-    //     map.on('mouseover', function (params) {
-    //       clearInterval(_self.intervalId);
-    //       map.dispatchAction({
-    //         type: 'mapUnSelect',
-    //         seriesIndex: 0,
-    //         dataIndex: _self.preSelectMapIndex,
-    //       });
-    //       map.dispatchAction({
-    //         type: 'mapSelect',
-    //         seriesIndex: 0,
-    //         dataIndex: params.dataIndex,
-    //       });
-    //       _self.preSelectMapIndex = params.dataIndex;
-    //     });
-    //     // 移出区域重新随机选中地图区域，并开启定时器
-    //     map.on('globalout', function () {
-    //       _self.reSelectMapRandomArea();
-    //       _self.startInterval();
-    //     });
-    //     this.startInterval();
-    //   });
-    // },
+    
   },
 };
 </script>

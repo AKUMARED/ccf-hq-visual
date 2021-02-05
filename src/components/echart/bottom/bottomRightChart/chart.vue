@@ -101,20 +101,36 @@ export default {
     cdata: {
       handler () {
         this.options = {
-          // title: {
-          //   text: "",
-          //   textStyle: {
-          //     color: "#D3D6DD",
-          //     fontSize: 24,
-          //     fontWeight: "normal"
-          //   },
-          //   subtextStyle: {
-          //     color: "#fff",
-          //     fontSize: 12
-          //   },
-          //   top: 50,
-          //   left: 80
-          // },
+          title: [{
+            text: "新增停电",
+            textStyle: {
+              color: "#D3D6DD",
+              fontSize: 20,
+              fontWeight: "normal"
+            },
+            subtextStyle: {
+              color: "#fff",
+              fontSize: 12
+            },
+            bottom: 40,
+            left: 150
+          },
+            {
+              text: "尚未送电",
+              textStyle: {
+                color: "#D3D6DD",
+                fontSize: 20,
+                fontWeight: "normal"
+              },
+              subtextStyle: {
+                color: "#fff",
+                fontSize: 12
+              },
+              bottom: 40,
+              left: 290
+            },
+          ],
+
           legend: {
             top: '15%',
             left: 'left',
@@ -125,10 +141,10 @@ export default {
           },
           series: [
             {
-              name: '访问来源',
+              name: '',
               type: 'pie',
               radius: ['30%', '50%'],
-              center: ["78%", "40%"],
+              center: ["45%", "40%"],
               avoidLabelOverlap: false,
               itemStyle: {
                 borderRadius: 10,
@@ -155,13 +171,13 @@ export default {
                 {value: 1721, name: '故障停电'},
                 {value: 50, name: '其他停电'},
                 {value: 6, name: '有序用电停电'}
-              ]
+              ],
             },
             {
-              name: '访问来源',
+              name: '',
               type: 'pie',
               radius: ['30%', '50%'],
-              center: ["45%", "40%"],
+              center: ["78%", "40%"],
               avoidLabelOverlap: false,
               itemStyle: {
                 borderRadius: 10,

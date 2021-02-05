@@ -9,9 +9,6 @@
       </div>
     </div>
     <div class="down">
-      <div class="ranking bg-color-black">
-        <dv-scroll-ranking-board :config="ranking" style="height:2.75rem" />
-      </div>
       <div class="d-flex jc-center">
         <leftCenter />
       </div>

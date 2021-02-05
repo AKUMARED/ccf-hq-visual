@@ -136,7 +136,7 @@ export default {
           },
           // 下方Y轴
           yAxis: {
-            name: "跳闸",
+            name: "",
             nameLocation: "end",
             nameGap: 24,
             nameTextStyle: {
@@ -164,61 +164,6 @@ export default {
             }
           },
           series: [
-            {
-              name: "",
-              type: "radar",
-              symbolSize: 0,
-              data: [
-                {
-                  value: newData.radarDataAvg[0],
-                  name: "平均指标",
-                  itemStyle: {
-                    normal: {
-                      color: "#f8d351"
-                    }
-                  },
-                  lineStyle: {
-                    normal: {
-                      opacity: 0
-                    }
-                  },
-                  areaStyle: {
-                    normal: {
-                      color: "#f8d351",
-                      shadowBlur: 25,
-                      shadowColor: "rgba(248,211,81,.3)",
-                      shadowOffsetX: 0,
-                      shadowOffsetY: -10,
-                      opacity: 1
-                    }
-                  }
-                },
-                {
-                  value: newData.radarData[0],
-                  name: "我的指标",
-                  itemStyle: {
-                    normal: {
-                      color: "#43dfa2"
-                    }
-                  },
-                  lineStyle: {
-                    normal: {
-                      opacity: 0
-                    }
-                  },
-                  areaStyle: {
-                    normal: {
-                      color: this.colorList.linearGtoB,
-                      shadowBlur: 15,
-                      shadowColor: "rgba(0,0,0,.2)",
-                      shadowOffsetX: 0,
-                      shadowOffsetY: 5,
-                      opacity: 0.8
-                    }
-                  }
-                }
-              ]
-            },
             {
               name: "",
               type: "line",
