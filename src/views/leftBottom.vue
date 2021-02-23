@@ -15,10 +15,6 @@
       <div>
         <BottomRightChart v-if="isShow"/>
       </div>
-      <div>
-        <p>新增停电</p>
-        <p>尚未送电</p>
-      </div>
     </div>
   </div>
 </template>

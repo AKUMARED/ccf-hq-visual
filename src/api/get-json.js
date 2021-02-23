@@ -15,5 +15,13 @@ export const getCityJSON = (path,params) => request.get(api+`/map/city/${path}.j
 // 获取天气
 // export const getWeather = (params) => request.get(`https://api.asilu.com/weather_v2/`, params);
 
-export const getList = (params) => request.post(api+`/result/feeder/find`, params);
+//获取全国网馈线数据
+export const getFeeder = (params) => request.post(api+`/result/feeder/find`, params);
 
+//获取全国网配变数据
+export const getTansformer = (params) => request.post(api+`/result/transformer/find`, params);
+
+//馈线状态异常排名前五
+export const getFeederFive = (params) => request.post(api+`/result/feeder/find/five`, params);
+//配变状态异常排名前五
+export const getTransformerFive = (params) => request.post(api+`/result/transformer/find/five`, params);

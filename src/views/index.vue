@@ -13,14 +13,12 @@
                 class="title-bototm"
                 :reverse="true"
                 :color="['#50e3c2', '#67a1e5']"
-                style="width:3.125rem;height:.1rem;"
-              />
+                style="width:3.125rem;height:.1rem;"></dv-decoration-6>
             </div>
             <dv-decoration-8
               :reverse="true"
               :color="['#568aea', '#000000']"
-              style="width:2.5rem;height:.625rem;"
-            />
+              style="width:2.5rem;height:.625rem;"></dv-decoration-8>
           </div>
           <dv-decoration-10 style="width:33.3%;height:.0625rem; transform: rotateY(180deg);" />
         </div>
@@ -36,7 +34,7 @@
               <span class="text"></span>
             </div>
             <div class="react-right ml-3" style="background-color: #0f1325;">
-              <span class="text colorBlue">{{this.areaData.areaName}}</span>
+              <span class="text colorBlue">{{titleArea}}</span>
             </div>
           </div>
           <div style="width: 40%" class="d-flex">
@@ -159,6 +157,9 @@ export default {
   computed:{
     titleTrend(){
         return this.$store.state.malfunction.MalfunctionType
+    },
+    titleArea(){
+      return this.$store.state.area
     }
   },
   methods: {
@@ -176,11 +177,9 @@ export default {
     },
     mapClick(data) {
       this.areaData = data;
-      console.log(this.areaData)
     },
     backClick(data) {
       this.areaData = data;
-      console.log(this.areaData)
     },
   }
 };

@@ -1,8 +1,16 @@
-export const mapOption = {
+export const mapOptionProvince = {
     basicOption:{
         showLegendSymbol: true,
         tooltip: {
             trigger: 'item',
+            formatter:function(params) {
+                let a = "--";
+                let b = "--";
+                a = JSON.stringify(params.data.value);
+                b = JSON.parse(a);
+                let tooltip = "线路跳闸: "+ b[0] +'</br>'+"配变停运数: "+ b[1] +'</br>'+"工单总数: "+"--";
+                return tooltip
+            },
             textStyle: {
                 fontSize: 14,
                 lineHeight: 22,
@@ -32,11 +40,11 @@ export const mapOption = {
         }
     },
     seriesOption:{
-        name: '相关指数',
+        name: '',
         type: 'map',
         // aspectScale: 1, //长宽比
-        zoom: 1.25,
-        roam: false,
+        zoom: 0.75,
+        roam: true ,
         top: '10%',
         left: '10%',
         nameMap:{
@@ -47,7 +55,7 @@ export const mapOption = {
             show: false,
             position: 'insideRight',
             textStyle: {
-                fontSize: 8,
+                fontSize: 10,
                 color: '#efefef',
             },
             emphasis: {

@@ -1,14 +1,6 @@
 <template>
   <div id="centerBottom">
     <div>
-      <div class="d-flex pt-2 pl-2" >
-        <div class="d-flex">
-<!--          <span class="fs-xl text" style="margin-left: 3.9rem;font-size: 0.215rem">近七日趋势</span>-->
-<!--          <div class="decoration2">-->
-<!--            <dv-decoration-2 :reverse="true" style="width:5px;height:6rem;" />-->
-<!--          </div>-->
-        </div>
-      </div>
       <div>
         <CenterBottomChart />
       </div>

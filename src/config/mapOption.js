@@ -3,6 +3,16 @@ export const mapOption = {
         showLegendSymbol: true,
         tooltip: {
             trigger: 'item',
+            formatter:function(params) {
+                let a = "--";
+                let b = "--";
+                a = JSON.stringify(params.data.value);
+                b = JSON.parse(a);
+                let tooltip = "线路跳闸: "+ b[0] +'</br>'+"配变停运数: "+ b[1] +'</br>'+"工单总数: "+"--";
+                return tooltip
+            },
+
+
             textStyle: {
                 fontSize: 14,
                 lineHeight: 22,
@@ -15,7 +25,7 @@ export const mapOption = {
         //左侧小导航图标
         visualMap: {
             min: 0,
-            max: 10,
+            max: 100,
             show: false,
             seriesIndex: 0,
             // 颜色
@@ -32,11 +42,12 @@ export const mapOption = {
         }
     },
     seriesOption:{
-        name: '相关指数',
+        name: '',
         type: 'map',
         // aspectScale: 1, //长宽比
         zoom: 1.25,
         roam: false,
+        center: [104.28, 36.32],
         top: '10%',
         left: '10%',
         nameMap:{
@@ -59,7 +70,7 @@ export const mapOption = {
         itemStyle: {
             normal: {
                 color: 'red',
-                areaColor: 'rgba(19,54,162, .5)',
+                areaColor: 'rgba(2,32,24,0.19)',
                 borderColor: 'rgba(0,242,252,.3)',
                 borderWidth: 1,
                 shadowBlur: 4,

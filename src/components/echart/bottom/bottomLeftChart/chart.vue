@@ -94,7 +94,7 @@ export default {
           ],
           series: [
             {
-              name: "贯通率",
+              name: "到达现场时长",
               type: "line",
               smooth: true,
               showAllSymbol: true,
@@ -109,22 +109,7 @@ export default {
               data: newData.rateData
             },
             {
-              name: "",
-              type: "bar",
-              barWidth: 10,
-              itemStyle: {
-                normal: {
-                  barBorderRadius: 5,
-                  color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                    { offset: 0, color: "#956FD4" },
-                    { offset: 1, color: "#3EACE5" }
-                  ])
-                }
-              },
-              data: newData.barData
-            },
-            {
-              name: "计划贯通",
+              name: "故障修复时长",
               type: "bar",
               barGap: "-100%",
               barWidth: 10,

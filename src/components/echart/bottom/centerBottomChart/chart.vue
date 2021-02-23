@@ -143,7 +143,7 @@ export default {
               color: "rgba(255,255,255,.5)",
               fontSize: 14
             },
-            max: newData.maxData,
+            // max: newData.maxData,
             splitNumber: 4,
 
             axisLine: {

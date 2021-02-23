@@ -150,11 +150,11 @@ export default {
                 show: false
               },
               data: [
-                {value: 44, name: '计划停电'},
-                {value: 16, name: '临时停电'},
-                {value: 65, name: '故障停电'},
-                {value: 0, name: '其他停电'},
-                {value: 4, name: '有序用电停电'}
+                {value: 17, name: '停送电投诉'},
+                {value: 40, name: '频繁停电类'},
+                {value: 17, name: '电压质量类'},
+                {value: 0, name: '供电频率类'},
+                {value: 5, name: '电网建设投诉'}
               ]
             },
           ]
