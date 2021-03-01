@@ -5,9 +5,15 @@ Vue.use(VueRouter)
 
 const routes = [{
   path: '/',
-  name: 'index',
-  component: () => import('../views/index.vue')
-}]
+  name: 'login',
+  component: () => import('../views/login.vue')
+  // component: () => import('../views/index.vue')
+},
+  {
+    path: '/index',
+    name: 'index',
+    component: () => import('../views/index.vue')
+  }]
 const router = new VueRouter({
   mode: "hash",
   routes
