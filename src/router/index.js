@@ -6,13 +6,18 @@ Vue.use(VueRouter)
 const routes = [{
   path: '/',
   name: 'login',
-  component: () => import('../views/login.vue')
+  component: () => import('../views/OADNO/login.vue')
   // component: () => import('../views/index.vue')
 },
   {
     path: '/index',
     name: 'index',
-    component: () => import('../views/index.vue')
+    component: () => import('../views/OADNO/index.vue')
+  },
+  {
+    path: '/home',
+    name: 'home',
+    component: () => import('../views/home.vue')
   }]
 const router = new VueRouter({
   mode: "hash",

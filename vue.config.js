@@ -20,9 +20,8 @@ module.exports = {
     // hotOnly: false, // 热更新
     proxy: {
       "/api/result": {
-        // target: "http://172.16.224.78:31000", // 目标代理接口地址
-        target: "http://172.16.17.49:31000", // 目标代理接口地址
-        // target: "http://10.86.224.2:10080", // 目标代理接口地址
+        // target: "http://172.16.17.49:31000", // 目标代理接口地址
+        target: "http://10.86.224.3:10081", // 目标代理接口地址
         secure: false,
         changeOrigin: true, // 开启代理，在本地创建一个虚拟服务端
         // ws: true, // 是否启用websockets
@@ -33,7 +32,7 @@ module.exports = {
       "/api": {
         // target: "http://172.16.60.209:8082/", // 目标代理接口地址
         // target: "http://localhost:10080", // 目标代理接口地址
-        target: "http://localhost:8080", // 目标代理接口地址
+        target: "http://localhost:18080", // 目标代理接口地址
         secure: false,
         changeOrigin: false, // 开启代理，在本地创建一个虚拟服务端
         // ws: true, // 是否启用websockets
