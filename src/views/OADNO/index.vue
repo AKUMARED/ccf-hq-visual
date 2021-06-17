@@ -4,23 +4,20 @@
       <dv-loading v-if="loading">Loading...</dv-loading>
       <div v-else class="host-body">
         <div class="d-flex jc-center">
-          <dv-decoration-10 style="width:33.3%;height:.0625rem;" />
-          <div class="d-flex jc-center">
-            <dv-decoration-8 :color="['#568aea', '#000000']" style="width:2.5rem;height:.625rem;" />
-            <div class="title">
-              <span class="title-text">配电网运行情况在线统计</span>
-              <dv-decoration-6
-                class="title-bototm"
-                :reverse="true"
-                :color="['#50e3c2', '#67a1e5']"
-                style="width:3.125rem;height:.1rem;"></dv-decoration-6>
-            </div>
-            <dv-decoration-8
-              :reverse="true"
-              :color="['#568aea', '#000000']"
-              style="width:2.5rem;height:.625rem;"></dv-decoration-8>
+          <div>
+            <a-tabs default-active-key="2" >
+              <a-tab-pane key="1" >
+                <span slot="tab" style="color: #f1f1f1"  @click="goOverView">
+                  总览
+                </span>
+              </a-tab-pane>
+              <a-tab-pane key="2">
+                <span slot="tab" style="color: #f1f1f1" @click="goScene()">
+                  配电网运行情况在线统计
+                </span>
+              </a-tab-pane>
+            </a-tabs>
           </div>
-          <dv-decoration-10 style="width:33.3%;height:.0625rem; transform: rotateY(180deg);" />
         </div>
 
         <!-- 第二行 -->
@@ -29,10 +26,9 @@
             <div
               class="react-right ml-4"
               style="width: 6.25rem; text-align: left;background-color: #0f1325;"
-              @click="returnHome()"
+
             >
               <span class="react-before"></span>
-              <span class="text">返回</span>
             </div>
             <div class="react-right ml-3" style="background-color: #0f1325;">
               <span class="text colorBlue">{{titleArea}}</span>
@@ -184,6 +180,12 @@ export default {
     },
     returnHome() {
       this.$router.push("/home");
+    },
+    goScene(){
+      this.$router.push("/index");
+    },
+    goOverView(){
+      this.$router.push("/overView/index");
     },
   }
 };

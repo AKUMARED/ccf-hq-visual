@@ -40,7 +40,7 @@ export default {
   },
   methods: {
       goScene() {
-          this.$router.push("/index");
+          this.$router.push("/overView/index");
       },
   }
 };

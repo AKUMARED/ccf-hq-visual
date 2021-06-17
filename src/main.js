@@ -5,6 +5,8 @@ import store from './store';
 import dataV from '@jiaminghi/data-view';
 Vue.use(dataV);
 
+import './plugins'
+
 // 按需引入vue-awesome图标
 import Icon from 'vue-awesome/components/Icon';
 import 'vue-awesome/icons/chart-bar.js';

@@ -6,13 +6,18 @@ Vue.use(VueRouter)
 const routes = [{
   path: '/',
   name: 'login',
-  component: () => import('../views/OADNO/login.vue')
+  component: () => import('../views/login.vue')
   // component: () => import('../views/index.vue')
 },
   {
     path: '/index',
     name: 'index',
     component: () => import('../views/OADNO/index.vue')
+  },
+  {
+    path: '/overView/index',
+    name: 'overView',
+    component: () => import('../views/overView/index.vue')
   },
   {
     path: '/home',
