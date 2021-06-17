@@ -86,6 +86,20 @@
       }
     }
 
+    .title-center {
+      cursor: pointer;
+      font-size: 0.325rem;
+      width: 4rem;
+      height: 0.625rem;
+      line-height: 0.625rem;
+      text-align: center;
+
+      .text {
+        display: inline-block;
+        transform: skewX(-45deg);
+      }
+    }
+
     .body-box {
       margin-top: 0.2rem;
       display: grid;

@@ -10,7 +10,7 @@
     </div>
     <div class="down">
       <div class="d-flex jc-center">
-        <RightCenterChart />
+        <RightBottomChart />
       </div>
       <div class="ranking bg-color-black">
         <dv-scroll-ranking-board :config="ranking" style="height:2.75rem" />
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-  import RightCenterChart from "@/components/echart/centerRight/rightCenterChart";
+  import RightBottomChart from "@/components/echart/OADNO/right/rightBottomChart";
 export default {
   data () {
     return {
@@ -65,7 +65,7 @@ export default {
     };
   },
   components: {
-    RightCenterChart
+    RightBottomChart
   }
 };
 </script>

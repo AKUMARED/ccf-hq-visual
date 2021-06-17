@@ -11,8 +11,8 @@
     import { formatTime } from '../../utils'
     import {getChinaJson, getProvinceJSON, getFeeder, getTansformer} from "../../api/get-json";
     import {cityProvincesMap} from '../../config/cityProvincesMap'
-    import {mapOption} from '../../config/mapOption'
-    import {mapOptionProvince} from '../../config/mapOptionProvince'
+    import {mapOption} from '../../config/OADNO/mapOption'
+    import {mapOptionProvince} from '../../config/OADNO/mapOptionProvince'
     import Utils from '../../utils/util';
     import UtilsT from '../../utils/utilT';
 

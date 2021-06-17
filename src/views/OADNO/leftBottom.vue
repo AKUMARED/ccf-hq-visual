@@ -13,14 +13,14 @@
         </div>
       </div>
       <div>
-        <BottomRightChart v-if="isShow"/>
+        <LeftBottomChart v-if="isShow"/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import BottomRightChart from "@/components/echart/bottom/bottomRightChart";
+import LeftBottomChart from "@/components/echart/OADNO/left/leftBottomChart";
 export default {
   data() {
     return {
@@ -28,7 +28,7 @@ export default {
     };
   },
   components: {
-    BottomRightChart
+    LeftBottomChart
   },
   mounted() {},
   methods: {}

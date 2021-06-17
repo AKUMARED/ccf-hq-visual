@@ -10,21 +10,21 @@
         </div>
       </div>
       <div>
-        <BottomLeftChart />
+        <RightCenterChart />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import BottomLeftChart from "@/components/echart/bottom/bottomLeftChart";
+import RightCenterChart from "@/components/echart/OADNO/right/rightCenterChart";
 export default {
   data() {
     return {
     };
   },
   components: {
-    BottomLeftChart,
+    RightCenterChart,
   },
   mounted() {},
   methods: {}

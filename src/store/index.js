@@ -38,7 +38,9 @@ export default new Vuex.Store({
     typeTransformer:"",
 
     area:"全国网",
-    nodeCode:""
+    nodeCode:"",
+
+    title:"首页"
   },
   mutations: {
     Feeder(state,msg){
@@ -93,7 +95,10 @@ export default new Vuex.Store({
     },
     typeTransformer(state,msg){
       state.typeTransformer = msg
-    }
+    },
+    title(state,msg){
+      state.title = msg
+    },
   },
   actions: {
   },

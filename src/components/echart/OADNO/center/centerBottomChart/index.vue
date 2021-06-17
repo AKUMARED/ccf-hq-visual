@@ -6,9 +6,9 @@
 
 <script>
 import Chart from './chart.vue'
-import {getFeeder, getTansformer} from "../../../../api/get-json";
-import Utils from '../../../../utils/util';
-import {cityProvincesMap} from '../../../../config/cityProvincesMap'
+import {getFeeder, getTansformer} from "../../../../../api/get-json";
+import Utils from '../../../../../utils/util';
+import {cityProvincesMap} from '../../../../../config/cityProvincesMap'
 
 export default {
   data () {

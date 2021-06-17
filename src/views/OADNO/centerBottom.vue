@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import CenterBottomChart from "@/components/echart/bottom/centerBottomChart";
+import CenterBottomChart from "@/components/echart/OADNO/center/centerBottomChart";
 export default {
   data() {
     return {};

@@ -8,7 +8,7 @@
             <a-tabs default-active-key="2" >
               <a-tab-pane key="1" >
                 <span slot="tab" style="color: #f1f1f1"  @click="goOverView">
-                  总览
+                  首页
                 </span>
               </a-tab-pane>
               <a-tab-pane key="2">
@@ -34,9 +34,14 @@
               <span class="text colorBlue">{{titleArea}}</span>
             </div>
           </div>
+          <div class="d-flex" style="width: 15%;">
+            <div class="title-center">
+              <span>{{title}}</span>
+            </div>
+          </div>
           <div style="width: 40%" class="d-flex">
             <div class="react-left bg-color-blue mr-3">
-              <span class="text fw-b">数据刷新</span>
+              <span class="text fw-b">生成报表</span>
             </div>
             <div
               class="react-left mr-4"
@@ -109,7 +114,6 @@ import leftTop from "./leftTop";
 import leftCenter from "./leftCenter";
 import leftBottom from "./leftBottom";
 
-// import centerTop from "./centerTop";
 import centerBottom from "./centerBottom";
 
 import rightTop from "./rightTop";
@@ -148,6 +152,7 @@ export default {
     china
   },
   mounted () {
+    this.$store.commit('title','配电网运行情况在线统计');
     this.timeFn();
     this.cancelLoading();
   },
@@ -157,6 +162,9 @@ export default {
     },
     titleArea(){
       return this.$store.state.area
+    },
+    title(){
+      return this.$store.state.title
     }
   },
   methods: {
@@ -182,9 +190,11 @@ export default {
       this.$router.push("/home");
     },
     goScene(){
+      this.$store.commit('title','配电网运行情况在线统计');
       this.$router.push("/index");
     },
     goOverView(){
+      this.$store.commit('title','首页');
       this.$router.push("/overView/index");
     },
   }

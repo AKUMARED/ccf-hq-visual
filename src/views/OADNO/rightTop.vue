@@ -10,14 +10,14 @@
     </div>
     <div class="down">
       <div class="d-flex jc-center">
-        <leftCenter />
+        <RightTopChart />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-  import leftCenter from "@/components/echart/left/leftCenter";
+  import RightTopChart from "@/components/echart/OADNO/right/rightTopChart";
 export default {
   data () {
     return {
@@ -77,7 +77,7 @@ export default {
     };
   },
   components: {
-    leftCenter
+    RightTopChart
   }
 };
 </script>

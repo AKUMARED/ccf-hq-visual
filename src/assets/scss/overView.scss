@@ -85,9 +85,47 @@
         transform: skewX(-45deg);
       }
     }
+    .title-center {
+      cursor: pointer;
+      font-size: 0.325rem;
+      width: 4.75rem;
+      height: 0.625rem;
+      line-height: 0.625rem;
+      text-align: center;
+
+      .react-before {
+        position: absolute;
+        left: -0.3125rem;
+        top: 0;
+        height: 0.625rem;
+        width: 0.625rem;
+        background-color: #0f1325;
+        transform: skewX(-45deg);
+      }
+    }
 
     .body-box {
       margin-top: 0.2rem;
+      display: grid;
+      flex-direction: row;
+      grid-template-columns:3fr 4fr 3fr;
+      //下方区域的布局
+      .left-box {
+        //display: grid;
+        grid-template-rows:2fr 2fr 4fr;
+      }
+
+      // 底部数据
+      .right-box {
+        //margin-top: 0.125rem;
+        //display: grid;
+        grid-template-rows:4fr 4fr;
+      }
+      .center-box {
+        margin-top: 0.125rem;
+        //display: grid;
+        grid-template-rows:auto auto;
+      }
     }
   }
 }
