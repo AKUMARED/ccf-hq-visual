@@ -87,7 +87,7 @@
     }
     .title-center {
       cursor: pointer;
-      font-size: 0.325rem;
+      font-size: 0.225rem;
       width: 4.75rem;
       height: 0.625rem;
       line-height: 0.625rem;
@@ -101,6 +101,31 @@
         width: 0.625rem;
         background-color: #0f1325;
         transform: skewX(-45deg);
+      }
+    }
+    .title-scene {
+      display: -webkit-flex;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      right: 0;
+      -webkit-justify-content: space-around;
+      //justify-content: space-around;
+      .box-scene{
+        margin-left: 20px;
+        //margin-right: 20px;
+        width: 4rem;
+        height:50px;
+        background: rgba(41, 166, 206, 0.28);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius:25px;
+      }
+      .scene{
+        font-size: 16px;
+        color: #fdfdff;
+
       }
     }
 
