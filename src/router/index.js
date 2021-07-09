@@ -20,6 +20,11 @@ const routes = [{
     component: () => import('../views/overView/index.vue')
   },
   {
+    path: '/OnePicture/index',
+    name: 'OnePicture',
+    component: () => import('../views/OnePicture/index.vue')
+  },
+  {
     path: '/home',
     name: 'home',
     component: () => import('../views/home.vue')
