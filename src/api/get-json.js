@@ -5,6 +5,7 @@ let api = '';
 
 // 获取全国JSON
 export const getChinaJson = (params) => request.get(api+`/map/china.json`, params);
+export const getResultJson = (params) => request.get(api+`/map/result.json`, params);
 
 // 获取省JSON
 export const getProvinceJSON = (path,params) => request.get(api+`/map/province/${path}.json`, params);

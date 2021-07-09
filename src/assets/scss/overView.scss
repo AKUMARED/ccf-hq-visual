@@ -116,11 +116,12 @@
         //margin-right: 20px;
         width: 4rem;
         height:50px;
-        background: rgba(41, 166, 206, 0.28);
+        background: #0f1325;
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius:25px;
+        //border-radius:25px;
+        //transform: skewX(-45deg);
       }
       .scene{
         font-size: 16px;
