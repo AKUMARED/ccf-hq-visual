@@ -88,8 +88,6 @@
                 } else {
                     this.requestGetProvinceJSON({areaName: this.areaName, areaCode: this.areaCode})
                 }
-
-
             },
             // 地图点击
             echartsMapClick(params) {
